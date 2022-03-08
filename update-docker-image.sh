@@ -8,7 +8,12 @@ VERSION=$(echo -e $DOWNLOAD_URL | perl -n -e'/bedrock-server-([\d.]+)\.zip$/ && 
 echo "Found version ${VERSION}"
 
 # check if we have it
-EXISTS=$(docker images | grep $IMAGE_NAME | grep $VERSION | wc -l)
+if [ -n "$USER" ]
+then
+    EXISTS=$(docker manifest inspect $USER/$IMAGE_NAME:$VERSION > /dev/null ; echo $(( ! "$?" )))
+else
+    EXISTS=$(docker images | grep $IMAGE_NAME | grep $VERSION | wc -l)
+fi
 
 if [[ "$EXISTS" -gt "0" ]]
 then
