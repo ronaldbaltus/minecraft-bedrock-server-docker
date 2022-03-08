@@ -21,4 +21,4 @@ The available environment variables are:
 
 Example run:
 
-`docker run --rm -it -e MC_NAME=my-server-name -p 19132:19132 ronaldbaltus/minecraft-bedrock-server:1.16.221.01`
+`docker run --rm -it -e MC_NAME=my-server-name -p 19132:19132 ronaldbaltus/minecraft-bedrock-server:latest`
