@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: ./update-docker-image.sh
+      run: /bin/bash update-docker-image.sh
