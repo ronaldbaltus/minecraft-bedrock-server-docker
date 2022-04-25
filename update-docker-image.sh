@@ -26,7 +26,7 @@ else
         echo "Pushing ${VERSION} to ${USER}"
         docker tag $IMAGE_NAME:$VERSION $USER/$IMAGE_NAME:$VERSION
         docker tag $IMAGE_NAME:$VERSION $USER/$IMAGE_NAME:latest
-        docker push $USER/$IMAGE_NAME:$VERSION $USER/$IMAGE_NAME:$VERSION
-        docker push $USER/$IMAGE_NAME:$VERSION $USER/$IMAGE_NAME:latest
+        docker push $USER/$IMAGE_NAME:$VERSION
+        docker push $USER/$IMAGE_NAME:latest
     fi
 fi
