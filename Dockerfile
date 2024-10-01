@@ -6,7 +6,7 @@ ARG VERSION=1.0.0.0
 # Setup requirements
 RUN apt-get update
 RUN apt-get install -y unzip curl libcurl4 libssl1.1 gettext-base
-RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-${VERSION}.zip --output bedrock-server.zip
+RUN curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 OPR/83.0.4254.70" https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-${VERSION}.zip --output bedrock-server.zip
 RUN unzip bedrock-server.zip -d bedrock-server
 RUN rm bedrock-server.zip
 
